@@ -89,6 +89,8 @@ The FastAPI application consists of:
 
 ## 🐳 Dockerization
 
+![image](https://github.com/user-attachments/assets/f89cfa65-a04c-4347-a66c-cb9144e5eef6)
+
 ### Dockerfile
 
 ```dockerfile
