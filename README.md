@@ -91,23 +91,6 @@ The FastAPI application consists of:
 
 ![image](https://github.com/user-attachments/assets/f89cfa65-a04c-4347-a66c-cb9144e5eef6)
 
-### Dockerfile
-
-```dockerfile
-FROM python:3.11-slim
-
-WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-EXPOSE 8000
-
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
 ### Docker Commands
 
 ```bash
@@ -151,6 +134,8 @@ docker ps
 
 ## 🧪 API Testing
 
+![image](https://github.com/user-attachments/assets/d776964f-4870-4bd9-8a44-b48eaf865cd8)
+
 ### Sample cURL Requests
 
 ```bash
@@ -173,6 +158,8 @@ curl -X POST "http://your-ec2-public-ip:8000/predict" \
 
 ### Example Input/Output
 
+![image](https://github.com/user-attachments/assets/9311a7c4-672e-4934-8167-a765d4fccd50)
+
 **Input:**
 ```json
 {
@@ -187,6 +174,9 @@ curl -X POST "http://your-ec2-public-ip:8000/predict" \
 ```
 
 **Output:**
+
+![image](https://github.com/user-attachments/assets/73bca857-ae18-4190-be00-8c5b40402456)
+
 ```json
 {
   "response": {
@@ -201,108 +191,9 @@ curl -X POST "http://your-ec2-public-ip:8000/predict" \
 }
 ```
 
-### Postman Testing
-<!-- Add sample Postman screenshot here -->
-
-<!-- Add screenshot of API response here -->
-
 ## 🎨 Streamlit Frontend
 
-### Running Streamlit Locally
-
-```bash
-# Run the frontend
-streamlit run frontend.py
-```
-
-The Streamlit app will be available at `http://localhost:8501`
-
-<!-- Add Streamlit app image here -->
-
-### Frontend Configuration
-Update the API URL in `frontend.py` to point to your deployed API endpoint.
-
-## 📋 Usage Instructions
-
-### Docker Deployment
-
-```bash
-# Build and run locally
-docker build -t insurance-api .
-docker run -p 8000:8000 insurance-api
-
-# Production deployment
-docker pull ayushvishnoi/insurance-premium-api:latest
-docker run -d -p 8000:8000 insurance-premium-api
-```
-
-## 🔧 Environment Setup
-
-### Requirements.txt
-The project uses the following key dependencies:
-- `fastapi==0.115.12` - Web framework
-- `uvicorn==0.34.2` - ASGI server
-- `pandas==2.2.3` - Data manipulation
-- `scikit-learn==1.6.1` - Machine learning
-- `pydantic==2.11.4` - Data validation
-- `streamlit` - Frontend interface
-
-## 🔍 Troubleshooting Tips
-
-### Common Issues
-
-1. **Model Loading Error**
-   - Ensure `model.pkl` exists in the `model/` directory
-
-2. **Docker Build Fails**
-   - Verify Dockerfile syntax
-   - Check internet connection for package installation
-
-3. **API Returns 500 Error**
-   - Check input data format
-   - Verify all required fields are provided
-
-### Debugging Commands
-
-```bash
-# Check container logs
-docker logs insurance-api
-
-# Access container shell
-docker exec -it insurance-api bash
-
-# Check API health
-curl http://localhost:8000/health
-```
-
-## 🤝 Contribution Guidelines
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Standards
-- Follow PEP 8 style guide
-- Add type hints
-- Include docstrings
-- Write tests for new features
-- Update documentation
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **FastAPI** - For the excellent web framework
-- **Scikit-learn** - For machine learning capabilities  
-- **Docker** - For containerization
-- **AWS** - For cloud infrastructure
-- **Streamlit** - For the frontend interface
-
-## 📞 Contact Information
+![image](https://github.com/user-attachments/assets/6435945f-a310-4509-b454-727f96536908)
 
 - **Developer**: Ayush Vishnoi
 - **Docker Hub**: [ayushvishnoi](https://hub.docker.com/u/ayushvishnoi)
@@ -311,14 +202,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 ⭐ **Star this repository if it helped you learn FastAPI and ML deployment!**
-
-## 📸 Screenshots & Images
-
-<!-- Add screenshot of API response here -->
-<!-- Add Docker Hub link screenshot here -->
-<!-- Add EC2 deployment image here -->
-<!-- Add Streamlit app image here -->
-
----
 
 *Built with ❤️ for learning FastAPI, Docker, and AWS deployment*
